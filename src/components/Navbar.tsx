@@ -14,6 +14,7 @@ const navLinks = [
   { label: 'Pricing',  href: '#pricing' },
   { label: 'Why Us',   href: '#why-us' },
   { label: 'Our Calls',href: '#calls' },
+  { label: 'Analysis',href: '#analyzer' },
   { label: 'Social Links', href: '#social' },
   { label: 'Contact',  href: '#contact' },
 ]

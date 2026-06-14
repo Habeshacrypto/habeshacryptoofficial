@@ -8,6 +8,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { PlayCircle, BookOpen, ChevronRight } from "lucide-react";
+import { YOUTUBE_LINK } from "@/helper/constant";
 
 export default function LearnCrypto() {
   const ref = useRef<HTMLDivElement>(null);
@@ -117,7 +118,7 @@ export default function LearnCrypto() {
                   More videos and learning resources available to members.
                 </p>
                 <a
-                  href="https://whop.com/habesha-crypto/"
+                  href={YOUTUBE_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary w-full text-center block"
