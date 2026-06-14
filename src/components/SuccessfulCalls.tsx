@@ -17,6 +17,7 @@ import useless from "../../assets/images/useless-gains.jpeg";
 import fred from "../../assets/images/fred.jpeg";
 import spunt from "../../assets/images/spnut.jpeg";
 import close from "../../assets/images/close.jpeg";
+import troll from "../../assets/images/troll.jpeg";
 // import close from "../../assets/images/close.jpeg";
 
 
@@ -27,7 +28,8 @@ const calls = [
   { coin: "Useless",         subtitle: "Bought at $0.001", multiplier: "30x",   stars: 5, color: "#ff44aa", image: useless },
   { coin: "Fred", subtitle: "Bought at $0.009", multiplier: "63x",    stars: 4, color: "#aa44ff", image: fred },
   { coin: "PNUT",   subtitle: "Bought at $0.021", multiplier: "50x",    stars: 4, color: "#ff8800", image: spunt },
-  { coin: "Useless Gains",subtitle: "Bought at $0.003", multiplier: "30x",    stars: 4, color: "#00ff88", image: close },
+  { coin: "Solana",subtitle: "Bought at $0.003", multiplier: "10x",    stars: 4, color: "#00ff88", image: close },
+  { coin: "Troll",subtitle: "Bought at $0.003", multiplier: "31x",    stars: 4, color: "#00ff88", image: troll },
 ];
 
 function StarRating({ count, color }: { count: number; color: string }) {

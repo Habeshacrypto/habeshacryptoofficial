@@ -7,15 +7,27 @@
 // ============================================================
 
 import { useEffect, useRef, useState } from "react";
-import { Users, TrendingUp, Globe, Shield } from "lucide-react";
+import { SquarePlay, TrendingUp, Globe, Shield } from "lucide-react";
 import about from "../../assets/images/about-us.png";
 import Image from "next/image";
 
 const stats = [
-  { icon: Users, value: "100+", label: "Educational Videos" },
+  { icon: SquarePlay, value: "100+", label: "Educational Videos" },
   { icon: TrendingUp, value: "1,200+", label: "Successful Calls" },
   { icon: Globe, value: "4+", label: "Continents" },
   { icon: Shield, value: "24/7", label: "Expert Support" },
+];
+
+const services = [
+  "Educational materials and learning resources",
+  "Fundamental and market analysis",
+  "Advanced technical analysis courses",
+  "On-chain trading education and opportunities",
+  "Exclusive trading signals",
+  "Professional trading strategies and risk management",
+  "Interactive community support and Q&A",
+  "Access to experienced traders and valuable market insights",
+  "Identifying promising tokens before they get listed on exchanges",
 ];
 
 export default function About() {
@@ -64,26 +76,32 @@ export default function About() {
           >
             <div className="crypto-card p-8">
               <div className="w-12 h-1 bg-[#00ff88] rounded mb-6" />
-              <p className="font-body text-slate-300 text-base leading-relaxed mb-5">
-                Habesha Crypto is a premier trading signals platform founded by
-                members of the Habesha community with a mission to empower
-                people with the knowledge and skills needed to thrive in the
-                world of cryptocurrencies.
+              <p className="font-body text-slate-400 text-base leading-relaxed mb-3">
+                Habesha Crypto is a community dedicated to educating,
+                empowering, and connecting individuals interested in the
+                cryptocurrency market.
               </p>
-              <p className="font-body text-slate-400 text-base leading-relaxed mb-5">
-                While we excel in serving the Habesha community, our vision has
-                expanded to include people who want to learn, grow, and succeed
-                in the crypto space. At Habesha Crypto, we offer comprehensive
-                learning resources and real-time trading signals that cater to
-                all experience levels. Whether you are just starting out or
-                looking to refine your trading strategy, our platform is
-                designed to help you succeed.
-              </p>
+              <h4 className="mb-2 ">What We Offer:</h4>
+              <ul className="space-y-2 mb-3 text-slate-300 text-base">
+                {services.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-1 cursor-default"
+                  >
+                    <span className="mt-[7px] w-2 h-2 rounded-full bg-[#00ff88] flex-shrink-0 shadow-[0_0_8px_#00ff88aa]" />
+                    <span className="font-body font-medium text-slate-300 text-sm leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
               <p className="font-body text-slate-400 text-base leading-relaxed">
-                Our goal is to build a global community united by a shared
-                passion for cryptocurrency trading, where learning and financial
-                empowerment know no boundaries. Join us, and let's grow together
-                in this exciting journey!
+                Whether you're a beginner or an experienced trader, our goal is
+                to provide the knowledge, tools, and support needed to help you
+                grow with confidence.
+                <br />
+                Join the Habesha Crypto Community and be part of a network
+                committed to continuous learning, growth, and success.
               </p>
 
               <div className="mt-8 flex gap-4">
@@ -106,7 +124,6 @@ export default function About() {
             }`}
           >
             <div className="relative mb-6 crypto-card overflow-hidden">
-              
               <Image src={about} alt="trade"></Image>
             </div>
 

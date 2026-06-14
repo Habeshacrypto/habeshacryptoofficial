@@ -12,6 +12,14 @@ import { Check, Zap, Star, Crown } from 'lucide-react'
 
 const PAYMENT_URL = 'https://tally.so/r/2Eo1vA'
 
+const SERVICES = [
+  "Real-time Trading Signals",
+  "Advanced Learning Resources",
+  "VIP Expert Support",
+  "Weekly Market Updates",
+  "Interactive Group – Ask questions and engage in discussions"
+]
+
 const plans = [
   {
     id: 'monthly',
@@ -21,13 +29,7 @@ const plans = [
     per: '/ month',
     popular: false,
     color: '#00ff88',
-    features: [
-      'Real-time Trading Signals',
-      '24/7 Expert Support',
-      'Community Access',
-      'Basic Learning Resources',
-      'Signal Alerts',
-    ],
+    features: SERVICES,
     cta: 'Coming Soon',
   },
   {
@@ -39,15 +41,7 @@ const plans = [
     popular: true,
     color: '#ffd700',
     badge: 'BEST VALUE',
-    features: [
-      'Everything in Monthly',
-      'Binance Trading Signals',
-      'VIP Expert Support',
-      'Advanced Courses',
-      'Priority Alerts',
-      'Exclusive Webinars',
-      'Save over 50%',
-    ],
+    features: SERVICES,
     cta: 'Subscribe Now',
   },
   {
@@ -58,13 +52,7 @@ const plans = [
     per: '/ quarter',
     popular: false,
     color: '#00aaff',
-    features: [
-      'Real-time Trading Signals',
-      '24/7 Expert Support',
-      'Community Access',
-      'Extended Learning',
-      'Priority Signals',
-    ],
+    features: SERVICES,
     cta: 'Coming Soon',
   },
 ]

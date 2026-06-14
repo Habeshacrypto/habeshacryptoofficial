@@ -26,10 +26,10 @@ export default function LearnCrypto() {
   }, []);
 
   const topics = [
-    "What is Cryptocurrency?",
-    "How to Read Charts",
-    "Risk Management Basics",
-    "Understanding Signals",
+    "Crypto & Blockchain Fundamentals",
+    "On-Chain Trading",
+    "Technical Analysis Deep Dive",
+    "Risk Management",
   ];
 
   return (
