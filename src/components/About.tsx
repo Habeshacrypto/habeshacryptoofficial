@@ -8,8 +8,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { SquarePlay, TrendingUp, Globe, Shield } from "lucide-react";
-import about from "../../assets/images/about-us.png";
+import about from "../../assets/images/crypto-trading.png";
 import Image from "next/image";
+import { TELEGRAM_LINK } from "@/helper/constant";
 
 const stats = [
   { icon: SquarePlay, value: "100+", label: "Educational Videos" },
@@ -106,7 +107,7 @@ export default function About() {
 
               <div className="mt-8 flex gap-4">
                 <a
-                  href="https://whop.com/habesha-crypto/"
+                  href={TELEGRAM_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"

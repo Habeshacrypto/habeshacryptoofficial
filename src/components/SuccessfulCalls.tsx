@@ -18,6 +18,8 @@ import fred from "../../assets/images/fred.jpeg";
 import spunt from "../../assets/images/spnut.jpeg";
 import close from "../../assets/images/close.jpeg";
 import troll from "../../assets/images/troll.jpeg";
+import maxxing from "../../assets/images/maxing.jpeg";
+import { TELEGRAM_LINK } from "@/helper/constant";
 // import close from "../../assets/images/close.jpeg";
 
 
@@ -28,8 +30,9 @@ const calls = [
   { coin: "Useless",         subtitle: "Bought at $0.001", multiplier: "30x",   stars: 5, color: "#ff44aa", image: useless },
   { coin: "Fred", subtitle: "Bought at $0.009", multiplier: "63x",    stars: 4, color: "#aa44ff", image: fred },
   { coin: "PNUT",   subtitle: "Bought at $0.021", multiplier: "50x",    stars: 4, color: "#ff8800", image: spunt },
-  { coin: "Solana",subtitle: "Bought at $0.003", multiplier: "10x",    stars: 4, color: "#00ff88", image: close },
+  { coin: "Solana",subtitle: "Bought at $0.003", multiplier: "10x",    stars: 5, color: "#00ff88", image: close },
   { coin: "Troll",subtitle: "Bought at $0.003", multiplier: "31x",    stars: 4, color: "#00ff88", image: troll },
+  { coin: "Maxxing",subtitle: "Bought at $0.003", multiplier: "35x",    stars: 5, color: "#ff8800", image: maxxing },
 ];
 
 function StarRating({ count, color }: { count: number; color: string }) {
@@ -143,7 +146,7 @@ export default function SuccessfulCalls() {
             These are just a few of our wins. Join to receive all future calls in real time.
           </p>
           <a
-            href="https://whop.com/habesha-crypto/"
+            href={TELEGRAM_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-2"
