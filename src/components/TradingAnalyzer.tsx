@@ -143,8 +143,19 @@ export default function TradingAnalyzer() {
       chartRef.current = null;
     }
 
+    // const LC = window.LightweightCharts;
+    // const container = chartContainerRef.current;
+
     const LC = window.LightweightCharts;
     const container = chartContainerRef.current;
+    const supply = data.totalSupply || 1_000_000_000;
+    const mcapOhlcv = data.chart.ohlcv.map((c) => ({
+      ...c,
+      open: c.open * supply,
+      high: c.high * supply,
+      low: c.low * supply,
+      close: c.close * supply,
+    }));
 
     const chart = LC.createChart(container, {
       width: container.clientWidth,
@@ -182,6 +193,26 @@ export default function TradingAnalyzer() {
     chartRef.current = chart;
 
     // ── Candlestick series ──
+    // const candleSeries = chart.addCandlestickSeries({
+    //   upColor: "#00ff88",
+    //   downColor: "#ff4444",
+    //   borderUpColor: "#00ff88",
+    //   borderDownColor: "#ff4444",
+    //   wickUpColor: "#00ff88",
+    //   wickDownColor: "#ff4444",
+    // });
+
+    // Auto-detect decimal precision from actual price data
+    const samplePrice = data.chart.ohlcv[0]?.close ?? 1;
+    const precision =
+      samplePrice < 0.0001
+        ? 8
+        : samplePrice < 0.01
+          ? 6
+          : samplePrice < 1
+            ? 4
+            : 2;
+
     const candleSeries = chart.addCandlestickSeries({
       upColor: "#00ff88",
       downColor: "#ff4444",
@@ -189,9 +220,35 @@ export default function TradingAnalyzer() {
       borderDownColor: "#ff4444",
       wickUpColor: "#00ff88",
       wickDownColor: "#ff4444",
+      priceFormat: {
+        type: "custom",
+        formatter: (price: number) => {
+          if (price >= 1_000_000_000)
+            return `$${(price / 1_000_000_000).toFixed(2)}B`;
+          if (price >= 1_000_000) return `$${(price / 1_000_000).toFixed(2)}M`;
+          if (price >= 1_000) return `$${(price / 1_000).toFixed(2)}K`;
+          return `$${price.toFixed(2)}`;
+        },
+        minMove: 1,
+      },
+      // priceFormat: {
+      //   type: "price",
+      //   precision: precision,
+      //   minMove: parseFloat((1 / Math.pow(10, precision)).toFixed(precision)),
+      // },
     });
+
     candleSeriesRef.current = candleSeries;
-    const candles = data.chart.ohlcv
+    // const candles = data.chart.ohlcv
+    //   .map((c) => ({
+    //     time: c.time as any,
+    //     open: c.open,
+    //     high: c.high,
+    //     low: c.low,
+    //     close: c.close,
+    //   }))
+    //   .sort((a, b) => a.time - b.time);
+    const candles = mcapOhlcv
       .map((c) => ({
         time: c.time as any,
         open: c.open,
@@ -213,7 +270,8 @@ export default function TradingAnalyzer() {
       });
       vwapSeries.setData(
         data.chart.vwapSeries
-          .map((v) => ({ time: v.time as any, value: v.value }))
+          // .map((v) => ({ time: v.time as any, value: v.value }))
+          .map((v) => ({ time: v.time as any, value: v.value * supply }))
           .sort((a, b) => a.time - b.time),
       );
     }
@@ -223,7 +281,8 @@ export default function TradingAnalyzer() {
       Object.entries(data.chart.fibLevels).forEach(([key, price]) => {
         const color = FIB_COLORS[key] ?? "#888888";
         candleSeries.createPriceLine({
-          price,
+          // price,
+          price: price * supply,
           color,
           lineWidth: 1,
           lineStyle: LC.LineStyle.Dashed,

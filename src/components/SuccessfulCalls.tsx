@@ -22,6 +22,8 @@ import maxxing from "../../assets/images/maxing.jpeg";
 import { TELEGRAM_LINK } from "@/helper/constant";
 // import close from "../../assets/images/close.jpeg";
 
+const PAYMENT_URL = 'https://tally.so/r/2Eo1vA'
+
 
 const calls = [
   { coin: "Trump",        subtitle: "Bought at $0.18",  multiplier: "24x",    stars: 5, color: "#00ff88", image: trump },
@@ -146,7 +148,7 @@ export default function SuccessfulCalls() {
             These are just a few of our wins. Join to receive all future calls in real time.
           </p>
           <a
-            href={TELEGRAM_LINK}
+            href={PAYMENT_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-2"
