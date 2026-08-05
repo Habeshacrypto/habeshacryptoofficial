@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from '../../assets/logo/cryptoh.png';
 import { YOUTUBE_LINK, TIKTOK_LINK, TELEGRAM_LINK } from '../helper/constant';
+import { useAuth } from '@/context/AuthContext';
 
 const socialLinks = [
   {
@@ -52,6 +53,7 @@ const socialLinks = [
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
+  const { user, loading } = useAuth();
   useEffect(() => {
     setTimeout(() => setVisible(true), 100);
   }, []);
@@ -111,14 +113,17 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-10">
-              <a
-                href="https://tally.so/r/2Eo1vA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary"
-              >
-                Subscribe Now
-              </a>
+              {!loading && (
+                user ? (
+                  <a href="/dashboard" className="btn-primary">
+                    Go to Analysis
+                  </a>
+                ) : (
+                  <a href="/login" className="btn-primary">
+                    Login
+                  </a>
+                )
+              )}
               <a
                 href="#about"
                 onClick={(e) => {

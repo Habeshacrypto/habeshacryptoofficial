@@ -4,12 +4,13 @@ import About from '@/components/About'
 import Pricing from '@/components/Pricing'
 import LearnCrypto from '@/components/LearnCrypto'
 import WhyUs from '@/components/WhyUs'
-import TradingAnalyzer from '@/components/TradingAnalyzer'
 import SuccessfulCalls from '@/components/SuccessfulCalls'
 import SocialFollow from '@/components/SocialFollow'
 import ContactUs from '@/components/ContactUs'
 import Footer from '@/components/Footer'
 import StarField from '@/components/StarField'
+
+// TradingAnalyzer removed — now lives at /dashboard (protected)
 
 export default function Home() {
   return (
@@ -22,7 +23,6 @@ export default function Home() {
         <Pricing />
         <LearnCrypto />
         <WhyUs />
-        <TradingAnalyzer />
         <SuccessfulCalls />
         <SocialFollow />
         <ContactUs />

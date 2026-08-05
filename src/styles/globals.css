@@ -207,6 +207,15 @@ body {
   transition: all 0.3s ease;
 }
 
+.crypto-input:-webkit-autofill,
+.crypto-input:-webkit-autofill:hover,
+.crypto-input:-webkit-autofill:focus,
+.crypto-input:-webkit-autofill:active {
+  -webkit-text-fill-color: #e2e8f0 !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(10, 26, 53, 0.8) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .crypto-input:focus {
   border-color: var(--green-crypto);
   box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);

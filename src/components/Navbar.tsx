@@ -2,26 +2,28 @@
 
 // ============================================================
 // COMPONENT: Navbar
-// PURPOSE: Top navigation bar with smooth scroll to sections
-//          and sticky behavior on scroll
+// PURPOSE: Top nav. Shows "Login" when logged out,
+//          "Analysis" button when logged in.
+//          "Analysis" nav link removed — only via dashboard.
 // ============================================================
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { useAuth } from '@/context/AuthContext'
 
 const navLinks = [
-  { label: 'About Us', href: '#about' },
-  { label: 'Pricing',  href: '#pricing' },
-  { label: 'Why Us',   href: '#why-us' },
-  { label: 'Our Calls',href: '#calls' },
-  { label: 'Analysis',href: '#analyzer' },
-  { label: 'Social Links', href: '#social' },
-  { label: 'Contact',  href: '#contact' },
+  { label: 'About Us',    href: '#about'   },
+  { label: 'Pricing',     href: '#pricing' },
+  { label: 'Why Us',      href: '#why-us'  },
+  { label: 'Our Calls',   href: '#calls'   },
+  { label: 'Social Links',href: '#social'  },
+  { label: 'Contact',     href: '#contact' },
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled]     = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { user, loading }           = useAuth()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -34,8 +36,7 @@ export default function Navbar() {
     setMobileOpen(false)
     const target = document.querySelector(href)
     if (target) {
-      const offset = 80
-      const top = target.getBoundingClientRect().top + window.scrollY - offset
+      const top = target.getBoundingClientRect().top + window.scrollY - 80
       window.scrollTo({ top, behavior: 'smooth' })
     }
   }
@@ -50,23 +51,18 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
-        {/* ── Logo ── */}
-        <a
-          href="#"
-          className="flex items-center gap-2 group"
-          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-        >
+        {/* Logo */}
+        <a href="#" className="flex items-center gap-2 group"
+          onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
           <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00ff88] to-[#00cc6a] flex items-center justify-center font-heading font-black text-[#050d1a] text-xs">
             HC
           </div>
-          <span
-            className="font-heading font-bold text-sm text-white tracking-wider group-hover:text-[#00ff88] transition-colors"
-          >
+          <span className="font-heading font-bold text-sm text-white tracking-wider group-hover:text-[#00ff88] transition-colors">
             Habesha <span className="text-[#00ff88]">Crypto</span>
           </span>
         </a>
 
-        {/* ── Desktop Links ── */}
+        {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -82,27 +78,26 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* ── CTA ── */}
-        <a
-          href="https://t.me/+-rCTAwUtusgzMmUx"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:block btn-primary text-xs"
-        >
-          Request to Join
-        </a>
+        {/* CTA — Login or Analysis */}
+        {!loading && (
+          user ? (
+            <a href="/dashboard" className="hidden md:block btn-primary text-xs">
+              Analysis
+            </a>
+          ) : (
+            <a href="/login" className="hidden md:block btn-primary text-xs">
+              Login
+            </a>
+          )
+        )}
 
-        {/* ── Mobile Hamburger ── */}
-        <button
-          className="md:hidden text-[#00ff88] p-2"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
+        {/* Mobile Hamburger */}
+        <button className="md:hidden text-[#00ff88] p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
-      {/* ── Mobile Menu ── */}
+      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="md:hidden bg-[#071224]/98 backdrop-blur-xl border-b border-[#00ff88]/20 px-4 py-6 flex flex-col gap-4">
           {navLinks.map((link) => (
@@ -115,14 +110,13 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="https://t.me/+-rCTAwUtusgzMmUx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-center mt-2"
-          >
-            Request to Join
-          </a>
+          {!loading && (
+            user ? (
+              <a href="/dashboard" className="btn-primary text-center mt-2">Analysis</a>
+            ) : (
+              <a href="/login" className="btn-primary text-center mt-2">Login</a>
+            )
+          )}
         </div>
       )}
     </header>
