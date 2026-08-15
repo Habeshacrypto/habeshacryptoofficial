@@ -52,6 +52,7 @@ export default function LoginPage() {
       const message = String(lookupError.message || '').toLowerCase()
       const isRlsError = message.includes('row level security') || message.includes('permission denied')
 
+      // console.error('Supabase login lookup error:', lookupError)
       setError(
         isRlsError
           ? 'Supabase is blocking reads on the users table. Please allow anonymous SELECT access for the users table in your RLS policy.'
@@ -61,7 +62,18 @@ export default function LoginPage() {
       return
     }
 
-    if (!data || String(data.password ?? '').trim() !== normalizedPassword) {
+    const storedPassword = String(data?.password ?? '')
+    const passwordsMatch = storedPassword.trim() === normalizedPassword
+
+    // console.log('Login debug:', {
+    //   normalizedEmail,
+    //   foundUser: !!data,
+    //   storedPassword,
+    //   normalizedPassword,
+    //   passwordsMatch,
+    // })
+
+    if (!data || !passwordsMatch) {
       setError('Invalid email or password.')
       setLoading(false)
       return
