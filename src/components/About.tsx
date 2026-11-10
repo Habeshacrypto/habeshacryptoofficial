@@ -14,21 +14,21 @@ import { TELEGRAM_LINK } from "@/helper/constant";
 
 const stats = [
   { icon: SquarePlay, value: "100+", label: "Educational Videos" },
-  { icon: TrendingUp, value: "1,200+", label: "Successful Calls" },
+  { icon: TrendingUp, value: "1,200+", label: "Market Observations" },
   { icon: Globe, value: "4+", label: "Continents" },
-  { icon: Shield, value: "24/7", label: "Expert Support" },
+  { icon: Shield, value: "24/7", label: "Learning Support" },
 ];
 
 const services = [
-  "Educational materials and learning resources",
-  "Fundamental and market analysis",
-  "Advanced technical analysis courses",
-  "On-chain trading education and opportunities",
-  "Exclusive trading signals",
-  "Professional trading strategies and risk management",
-  "Interactive community support and Q&A",
-  "Access to experienced traders and valuable market insights",
-  "Identifying promising tokens before they get listed on exchanges",
+  "Cryptocurrency and blockchain fundamentals",
+  "Fundamental analysis and market research",
+  "Technical analysis as an educational discipline",
+  "Understanding on-chain data and blockchain analytics",
+  "Digital asset security and risk awareness",
+  "Cryptocurrency market structure and economic principles",
+  "Decentralized finance (DeFi) and emerging blockchain technologies",
+  "Educational discussions and community knowledge sharing",
+  "Structured learning resources for beginners and advanced learners",
 ];
 
 export default function About() {
@@ -78,11 +78,11 @@ export default function About() {
             <div className="crypto-card p-8">
               <div className="w-12 h-1 bg-[#00ff88] rounded mb-6" />
               <p className="font-body text-slate-400 text-base leading-relaxed mb-3">
-                Habesha Crypto is a community dedicated to educating,
-                empowering, and connecting individuals interested in the
-                cryptocurrency market.
+                Habesha Crypto is an independent cryptocurrency education
+                community committed to promoting digital financial literacy and
+                responsible understanding of blockchain technology.
               </p>
-              <h4 className="mb-2 ">What We Offer:</h4>
+              <h4 className="mb-2 ">Our Educational Focus:</h4>
               <ul className="space-y-2 mb-3 text-slate-300 text-base">
                 {services.map((item) => (
                   <li
@@ -97,12 +97,11 @@ export default function About() {
                 ))}
               </ul>
               <p className="font-body text-slate-400 text-base leading-relaxed">
-                Whether you're a beginner or an experienced trader, our goal is
-                to provide the knowledge, tools, and support needed to help you
-                grow with confidence.
-                <br />
-                Join the Habesha Crypto Community and be part of a network
-                committed to continuous learning, growth, and success.
+                Whether you are a beginner or an experienced learner, our goal is
+                to create an environment where people can expand their
+                knowledge, develop critical thinking skills, and better
+                understand the opportunities and risks associated with digital
+                assets.
               </p>
 
               <div className="mt-8 flex gap-4">
@@ -112,7 +111,7 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  Join Community
+                  Join the Community
                 </a>
               </div>
             </div>

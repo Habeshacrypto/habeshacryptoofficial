@@ -49,11 +49,12 @@ export default function LearnCrypto() {
             Education
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white section-title">
-            Learn About Crypto
+            Learn About Cryptocurrency
           </h2>
           <p className="font-body text-slate-400 text-base mt-6 max-w-xl mx-auto">
-            Curious about the basics of crypto? Check out the video below to
-            learn the foundation — the perfect starting point for any beginner.
+            Curious about the basics of crypto? Explore educational resources
+            that explain blockchain, digital assets, and key market concepts in
+            a practical, beginner-friendly way.
           </p>
         </div>
 
@@ -115,7 +116,7 @@ export default function LearnCrypto() {
 
               <div className="mt-8 pt-6 border-t border-slate-800">
                 <p className="font-body text-slate-500 text-xs mb-4">
-                  More videos and learning resources available to members.
+                  More educational videos and learning resources available to members.
                 </p>
                 <a
                   href={YOUTUBE_LINK}
@@ -123,7 +124,7 @@ export default function LearnCrypto() {
                   rel="noopener noreferrer"
                   className="btn-primary w-full text-center block"
                 >
-                  Access Full Library
+                  Explore Learning
                 </a>
               </div>
             </div>

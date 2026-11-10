@@ -9,11 +9,11 @@
 const year = new Date().getFullYear()
 
 const links = [
-  { label: 'About Us',  href: '#about' },
-  { label: 'Pricing',   href: '#pricing' },
-  { label: 'Why Us',    href: '#why-us' },
-  { label: 'Our Calls', href: '#calls' },
-  { label: 'Contact',   href: '#contact' },
+  { label: 'About Us',     href: '#about' },
+  { label: 'Pricing',      href: '#pricing' },
+  { label: 'Why Us',       href: '#why-us' },
+  { label: 'Case Studies', href: '#calls' },
+  { label: 'Contact',      href: '#contact' },
 ]
 
 export default function Footer() {
@@ -37,7 +37,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-body text-slate-600 text-xs max-w-xs">
-              From Zero to Crypto Hero — empowering the Habesha community and beyond.
+              Cryptocurrency education, knowledge, and community for learners of every level.
             </p>
           </div>
 
@@ -55,12 +55,12 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="mt-10 pt-6 border-t border-slate-900 flex flex-col items-center justify-center gap-3 text-center">
           <p className="font-mono text-xs text-slate-700">
             © {year} Habesha Crypto. All rights reserved.
           </p>
-          <p className="font-mono text-xs text-slate-800">
-            Trading involves risk. Past performance is not indicative of future results.
+          <p className="font-mono text-[10px] sm:text-xs text-slate-600 max-w-3xl leading-relaxed">
+            Educational content only. Not financial advice. Independent research is recommended before making any decisions.
           </p>
         </div>
       </div>

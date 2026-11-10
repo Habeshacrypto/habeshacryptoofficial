@@ -15,33 +15,33 @@ import mobile from '../../assets/images/phonei.png';
 const features = [
   {
     icon: Bell,
-    title: 'Real-Time Trade Alerts',
+    title: 'Structured Cryptocurrency Education',
     description:
-      'Get instant buy/sell signals directly to your device. Our algorithm-backed alerts ensure you never miss a profitable trade opportunity in the crypto market.',
+      'Learn about blockchain fundamentals, digital assets, decentralised finance, and cryptocurrency concepts through clear, structured education.',
     color: '#00ff88',
     delay: 0,
   },
   {
     icon: HeadphonesIcon,
-    title: 'Expert Support',
+    title: 'Educational Market Research',
     description:
-      'Our team of seasoned crypto traders is available around the clock to answer your questions, guide your strategy, and help you when you need it most.',
+      'Explore historical developments, economic trends, blockchain data, and educational market observations to build stronger context and understanding.',
     color: '#00aaff',
     delay: 150,
   },
   {
     icon: BookOpenCheck,
-    title: 'Comprehensive Learning Resources',
+    title: 'Technical Analysis Education',
     description:
-      'Access a rich library of tutorials, courses, and guides — from blockchain basics to advanced chart analysis. Everything you need to trade with confidence.',
+      'Understand chart patterns, technical indicators, market structure, and analytical methodologies in a learning-first environment.',
     color: '#aa00ff',
     delay: 300,
   },
   {
     icon: Users2,
-    title: 'Vibrant Crypto Community',
+    title: 'Community Learning',
     description:
-      'Join thousands of like-minded traders sharing insights, strategies, and wins. The Habesha Crypto community is where knowledge meets opportunity.',
+      'Connect with individuals interested in blockchain technology and share educational knowledge through structured discussions and learning support.',
     color: '#ffaa00',
     delay: 450,
   },
@@ -75,7 +75,7 @@ export default function WhyUs() {
           }`}
         >
           <span className="font-mono text-xs text-[#00ff88] uppercase tracking-widest mb-3 block">
-            Our Edge
+            Why Learn With Us
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white section-title">
             Why Habesha Crypto

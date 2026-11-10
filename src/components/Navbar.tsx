@@ -12,12 +12,12 @@ import { Menu, X } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
 
 const navLinks = [
-  { label: 'About Us',    href: '#about'   },
-  { label: 'Pricing',     href: '#pricing' },
-  { label: 'Why Us',      href: '#why-us'  },
-  { label: 'Our Calls',   href: '#calls'   },
-  { label: 'Social Links',href: '#social'  },
-  { label: 'Contact',     href: '#contact' },
+  { label: 'About Us',      href: '#about'   },
+  { label: 'Pricing',       href: '#pricing' },
+  { label: 'Why Us',        href: '#why-us'  },
+  { label: 'Case Studies',  href: '#calls'   },
+  { label: 'Social Links',  href: '#social'  },
+  { label: 'Contact',       href: '#contact' },
 ]
 
 export default function Navbar() {

@@ -90,25 +90,26 @@ export default function Hero() {
 
             {/* Headline */}
             <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
-              <span className="text-white">Making The</span>
+              <span className="text-white">Cryptocurrency</span>
               <br />
-              <span className="text-white">Difference from</span>
+              <span className="text-white">Education.</span>
               <br />
-              <span className="text-white">Zero to</span>
+              <span className="text-white">Knowledge.</span>
               <br />
               <span
                 className="text-[#00ff88] glow-green-text"
                 style={{ animation: "glow 2s ease-in-out infinite alternate" }}
               >
-                Crypto Hero!
+                Community.
               </span>
             </h1>
 
             {/* Sub text */}
             <p className="font-body text-slate-400 text-base sm:text-lg leading-relaxed max-w-lg mb-8">
-              Join the Habesha Crypto community — your gateway to real-time
-              trading signals, expert mentorship, and a thriving community of
-              crypto traders growing together from zero to hero.
+              A community-driven educational platform dedicated to
+              cryptocurrency, blockchain technology, digital assets, and
+              financial literacy. Learn at your own pace through practical
+              research, education, and discussion.
             </p>
 
             {/* CTA Buttons */}
@@ -116,11 +117,11 @@ export default function Hero() {
               {!loading && (
                 user ? (
                   <a href="/dashboard" className="btn-primary">
-                    Go to Analysis
+                    Explore Learning
                   </a>
                 ) : (
                   <a href="/login" className="btn-primary">
-                    Login
+                    Access Education
                   </a>
                 )
               )}

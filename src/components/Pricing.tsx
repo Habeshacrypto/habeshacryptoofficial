@@ -13,11 +13,11 @@ import { Check, Zap, Star, Crown } from 'lucide-react'
 const PAYMENT_URL = 'https://tally.so/r/2Eo1vA'
 
 const SERVICES = [
-  "Real-time Trading Signals",
-  "Advanced Learning Resources",
-  "VIP Expert Support",
-  "Weekly Market Updates",
-  "Interactive Group – Ask questions and engage in discussions"
+  "Structured cryptocurrency education",
+  "Curated learning resources and market research",
+  "Community discussions and Q&A",
+  "Risk awareness and digital literacy education",
+  "Educational workshops and learning support"
 ]
 
 const plans = [
@@ -30,7 +30,7 @@ const plans = [
     popular: false,
     color: '#00ff88',
     features: SERVICES,
-    cta: 'Coming Soon',
+    cta: 'View Access',
   },
   {
     id: 'yearly',
@@ -40,9 +40,9 @@ const plans = [
     per: '/ year',
     popular: true,
     color: '#ffd700',
-    badge: 'BEST VALUE',
+    badge: 'Popular',
     features: SERVICES,
-    cta: 'Subscribe Now',
+    cta: 'View Access',
   },
   {
     id: 'quarterly',
@@ -53,7 +53,7 @@ const plans = [
     popular: false,
     color: '#00aaff',
     features: SERVICES,
-    cta: 'Coming Soon',
+    cta: 'View Access',
   },
 ]
 
@@ -84,14 +84,15 @@ export default function Pricing() {
           }`}
         >
           <span className="font-mono text-xs text-[#00ff88] uppercase tracking-widest mb-3 block">
-            Membership Plans
+            Access Plans
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white section-title">
-            Subscribe to Our Prime Alert
+            Educational Membership & Learning Resources
           </h2>
           <p className="font-body text-slate-400 text-base mt-6 max-w-2xl mx-auto">
-            Get exclusive access to real-time trading signals, alerts and 24/7 support. Choose the
-            plan that suits you best and take your crypto trading to the next level!
+            Access structured educational materials, cryptocurrency research,
+            market education, and a learning-focused community designed to
+            support continuous learning and responsible understanding.
           </p>
         </div>
 
@@ -174,7 +175,7 @@ export default function Pricing() {
                       ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-[#050d1a] hover:from-yellow-300 hover:to-yellow-400 hover:shadow-lg hover:shadow-yellow-400/30'
                       : 'btn-outline block'
                   }`}
-                  style={!popular ? { borderColor: color, color, pointerEvents: 'none', opacity: 0.5 } : {}}
+                  style={!popular ? { borderColor: color, color } : {}}
                 >
                   {cta}
                 </a>

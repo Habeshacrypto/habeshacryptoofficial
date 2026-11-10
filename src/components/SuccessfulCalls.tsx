@@ -1,14 +1,7 @@
 "use client";
 
-// ============================================================
-// COMPONENT: SuccessfulCalls
-// PURPOSE: Showcases past winning trades made by the community.
-//          Card layout: image top, title + subtitle bottom-left,
-//          multiplier + stars bottom-right.
-// ============================================================
-
 import { useEffect, useRef, useState } from "react";
-import { Trophy } from "lucide-react";
+import { BookOpenText } from "lucide-react";
 import Image from "next/image";
 import trump from "../../assets/images/trump.jpeg";
 import one from "../../assets/images/one.jpeg";
@@ -19,36 +12,20 @@ import spunt from "../../assets/images/spnut.jpeg";
 import close from "../../assets/images/close.jpeg";
 import troll from "../../assets/images/troll.jpeg";
 import maxxing from "../../assets/images/maxing.jpeg";
-import { TELEGRAM_LINK } from "@/helper/constant";
-// import close from "../../assets/images/close.jpeg";
 
 const PAYMENT_URL = 'https://tally.so/r/2Eo1vA'
 
-
 const calls = [
-  { coin: "Trump",        subtitle: "Bought at $0.18",  multiplier: "24x",    stars: 5, color: "#00ff88", image: trump },
-  { coin: "1",       subtitle: "Bought at $0.002", multiplier: "124x",     stars: 4, color: "#00ccff", image: one },
-  { coin: "Goku",     subtitle: "Bought at $0.004", multiplier: "921x",   stars: 5, color: "#ffd700", image: goku },
-  { coin: "Useless",         subtitle: "Bought at $0.001", multiplier: "30x",   stars: 5, color: "#ff44aa", image: useless },
-  { coin: "Fred", subtitle: "Bought at $0.009", multiplier: "63x",    stars: 4, color: "#aa44ff", image: fred },
-  { coin: "PNUT",   subtitle: "Bought at $0.021", multiplier: "50x",    stars: 4, color: "#ff8800", image: spunt },
-  { coin: "Solana",subtitle: "Bought at $0.003", multiplier: "10x",    stars: 5, color: "#00ff88", image: close },
-  { coin: "Troll",subtitle: "Bought at $0.003", multiplier: "31x",    stars: 4, color: "#00ff88", image: troll },
-  { coin: "Maxxing",subtitle: "Bought at $0.003", multiplier: "35x",    stars: 5, color: "#ff8800", image: maxxing },
+  { coin: "Trump", subtitle: "Historical meme-coin example", badge: "Case Study", color: "#00ff88", image: trump },
+  { coin: "1", subtitle: "Market cycle example", badge: "Case Study", color: "#00ccff", image: one },
+  { coin: "Goku", subtitle: "Volatility case study", badge: "Case Study", color: "#ffd700", image: goku },
+  { coin: "Useless", subtitle: "Community learning example", badge: "Case Study", color: "#ff44aa", image: useless },
+  { coin: "Fred", subtitle: "Historical market snapshot", badge: "Case Study", color: "#aa44ff", image: fred },
+  { coin: "PNUT", subtitle: "Educational example only", badge: "Case Study", color: "#ff8800", image: spunt },
+  { coin: "Solana", subtitle: "Market behavior example", badge: "Case Study", color: "#00ff88", image: close },
+  { coin: "Troll", subtitle: "Growth pattern analysis", badge: "Case Study", color: "#00ff88", image: troll },
+  { coin: "Maxxing", subtitle: "Cycle and sentiment study", badge: "Case Study", color: "#ff8800", image: maxxing },
 ];
-
-function StarRating({ count, color }: { count: number; color: string }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} viewBox="0 0 12 12" className="w-3 h-3"
-          fill={i < count ? color : "none"} stroke={color} strokeWidth="1">
-          <path d="M6 1l1.2 3.6H11L8.1 6.8l1.1 3.4L6 8.3l-3.2 1.9 1.1-3.4L1 4.6h3.8z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
 
 export default function SuccessfulCalls() {
   const ref = useRef<HTMLDivElement>(null);
@@ -70,34 +47,30 @@ export default function SuccessfulCalls() {
       <div className="absolute -bottom-40 right-0 w-72 h-72 rounded-full bg-[#00ff88]/3 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
-        {/* ── Header ── */}
         <div className={`text-center mb-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="font-mono text-xs text-[#00ff88] uppercase tracking-widest mb-3 block">
-            Proven Track Record
+            Market Learning
           </span>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white section-title">
-            Successful Calls That Made Us Money
+            Cryptocurrency Market Case Studies
           </h2>
           <p className="font-body text-slate-400 text-base mt-6 max-w-2xl mx-auto">
-            Here are some of our best-performing calls that have brought significant returns
-            for our community. Check out these successful trades!
+            Explore historical market events and educational case studies designed
+            to improve understanding of volatility, market cycles, and digital asset behavior.
           </p>
         </div>
 
-        {/* ── Trophy banner ── */}
         <div className={`flex items-center justify-center gap-3 mb-12 transition-all duration-700 delay-200 ${visible ? "opacity-100" : "opacity-0"}`}>
           <div className="h-px flex-1 max-w-32 bg-gradient-to-r from-transparent to-[#ffd700]/40" />
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#ffd700]/10 border border-[#ffd700]/30">
-            <Trophy size={14} className="text-[#ffd700]" />
-            <span className="font-mono text-xs text-[#ffd700] uppercase tracking-widest">Community Wins</span>
+            <BookOpenText size={14} className="text-[#ffd700]" />
+            <span className="font-mono text-xs text-[#ffd700] uppercase tracking-widest">Educational Examples</span>
           </div>
           <div className="h-px flex-1 max-w-32 bg-gradient-to-l from-transparent to-[#ffd700]/40" />
         </div>
 
-        {/* ── Calls Grid ── */}
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-          {calls.map(({ coin, subtitle, multiplier, stars, color, image }, i) => (
+          {calls.map(({ coin, subtitle, badge, color, image }, i) => (
             <div
               key={coin}
               className={`group rounded-xl overflow-hidden border border-white/5 bg-[#0a1a35] hover:border-[#00ff88]/50 hover:shadow-[0_0_20px_rgba(0,255,136,0.3)] transition-all duration-700 hover:-translate-y-1 ${
@@ -105,7 +78,6 @@ export default function SuccessfulCalls() {
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {/* ── Image top ── */}
               <div className="relative w-full aspect-[16/9] overflow-hidden">
                 <Image
                   src={image}
@@ -116,25 +88,18 @@ export default function SuccessfulCalls() {
                 <div className="absolute inset-0 bg-black/30" />
               </div>
 
-              {/* ── Body bottom ── */}
               <div className="p-4 flex items-start justify-between gap-3">
-
-                {/* Left: title + subtitle */}
                 <div className="flex-1 min-w-0">
                   <h3 className="font-heading font-bold text-sm text-white truncate">{coin}</h3>
-                  {/* <p className="font-mono text-[11px] text-slate-500 mt-0.5 truncate">{subtitle}</p> */}
+                  <p className="font-mono text-[11px] text-slate-400 mt-1 leading-relaxed">{subtitle}</p>
                 </div>
 
-                {/* Right: multiplier + stars */}
                 <div className="flex-shrink-0 text-right">
                   <div
-                    className="font-heading font-black text-lg leading-tight"
+                    className="font-heading font-black text-xs uppercase tracking-[0.12em] leading-tight"
                     style={{ color, textShadow: `0 0 12px ${color}55` }}
                   >
-                    {multiplier}
-                  </div>
-                  <div className="mt-1 flex justify-end">
-                    <StarRating count={stars} color={color} />
+                    {badge}
                   </div>
                 </div>
               </div>
@@ -142,10 +107,9 @@ export default function SuccessfulCalls() {
           ))}
         </div>
 
-        {/* ── CTA strip ── */}
         <div className={`mt-14 text-center transition-all duration-700 delay-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <p className="font-body text-slate-500 text-sm mb-5">
-            These are just a few of our wins. Join to receive all future calls in real time.
+            These examples are for educational purposes only and do not represent future outcomes or investment advice.
           </p>
           <a
             href={PAYMENT_URL}
@@ -153,8 +117,8 @@ export default function SuccessfulCalls() {
             rel="noopener noreferrer"
             className="btn-primary inline-flex items-center gap-2"
           >
-            <Trophy size={15} />
-            Join & Get Next Call
+            <BookOpenText size={15} />
+            Access Learning Resources
           </a>
         </div>
       </div>
