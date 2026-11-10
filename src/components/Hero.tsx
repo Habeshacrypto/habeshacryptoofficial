@@ -92,15 +92,15 @@ export default function Hero() {
             <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6">
               <span className="text-white">Cryptocurrency</span>
               <br />
-              <span className="text-white">Education.</span>
+              <span className="text-white">Education</span>
               <br />
-              <span className="text-white">Knowledge.</span>
+              <span className="text-white">Knowledge</span>
               <br />
               <span
                 className="text-[#00ff88] glow-green-text"
                 style={{ animation: "glow 2s ease-in-out infinite alternate" }}
               >
-                Community.
+                Community
               </span>
             </h1>
 

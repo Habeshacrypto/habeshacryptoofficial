@@ -23,7 +23,7 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-[#00ff88]/10 bg-[#050d1a]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 pb-3">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
 
           {/* Logo */}
@@ -55,12 +55,12 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-slate-900 flex flex-col items-center justify-center gap-3 text-center">
-          <p className="font-mono text-xs text-slate-700">
-            © {year} Habesha Crypto. All rights reserved.
-          </p>
+        <div className="mt-8 pt-3 border-t border-slate-900 flex flex-col items-center justify-center gap-1 text-center">
           <p className="font-mono text-[10px] sm:text-xs text-slate-600 max-w-3xl leading-relaxed">
             Educational content only. Not financial advice. Independent research is recommended before making any decisions.
+          </p>
+          <p className="font-mono text-xs text-slate-700">
+            © {year} Habesha Crypto. All rights reserved.
           </p>
         </div>
       </div>
